@@ -78,21 +78,6 @@ map <C-S-tab> :tabprevious<CR>
 map <C-tab> :tabnext<CR>
 map <C-t> :tabnew<CR>
 
-"NERDTree Options
-nmap <Leader>f :NERDTreeToggle<CR>
-nmap <F3> :NERDTreeMirror<CR>
-nmap ntf :NERDTreeFind<CR>
-let NERDTreeShowBookmarks=1
-let NERDTreeShowHidden=1
-let NERDTreeWinSize=25
-let NERDTreeWinPos="right"
-let NERDTreeDirArrows=1
-" Start NERDTree with VIM automagically
-autocmd VimEnter * NERDTree
-autocmd BufEnter * NERDTreeMirror
-" Do not leave cursor in NERDTree buffer
-autocmd VimEnter * wincmd p
-
 
 "ConqueTerm
 nmap <F9> :bel :sp<CR>:ConqueTerm bash<CR>
