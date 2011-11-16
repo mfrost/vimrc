@@ -84,12 +84,10 @@ nmap <F9> :bel :sp<CR>:ConqueTerm bash<CR>
 let ConqueTerm_CloseOnEnd=1
 let ConqueTerm_InsertOnEnter=1
 
-if $COLORTERM == 'gnome-terminal'
-    set term=xterm-256color
-    colorscheme railscasts2
-else
-    colorscheme default
-endif
+syntax enable
+set background=dark
+colorscheme solarized
+
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
@@ -102,7 +100,7 @@ autocmd BufWinLeave * call clearmatches()
 set list
 set listchars=tab:>-,trail:-
 
-set colorcolumn=80,120
+"set colorcolumn=80,120
 "hi ColorColumn ctermbg=black
 "hi ColorColumn guibg=black
 
