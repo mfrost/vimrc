@@ -73,21 +73,9 @@ noremap <C-S-c> "+y
 "noremap <C-S-v> "+p<CR>
 
 
-"Tab Navigation
-map <C-S-tab> :tabprevious<CR>
-map <C-tab> :tabnext<CR>
-map <C-t> :tabnew<CR>
-
-
-"ConqueTerm
-nmap <F9> :bel :sp<CR>:ConqueTerm bash<CR>
-let ConqueTerm_CloseOnEnd=1
-let ConqueTerm_InsertOnEnter=1
-
 syntax enable
 set background=dark
 colorscheme solarized
-
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
@@ -100,36 +88,7 @@ autocmd BufWinLeave * call clearmatches()
 set list
 set listchars=tab:>-,trail:-
 
-"set colorcolumn=80,120
-"hi ColorColumn ctermbg=black
-"hi ColorColumn guibg=black
-
 set mouse=a		" Enable mouse usage (all modes)
-
-" Quit if NERDTree is the only buffer open
-function! NERDTreeQuit()
-  redir => buffersoutput
-  silent buffers
-  redir END
-"                     1BufNo  2Mods.     3File           4LineNo
-  let pattern = '^\s*\(\d\+\)\(.....\) "\(.*\)"\s\+line \(\d\+\)$'
-  let windowfound = 0
-
-  for bline in split(buffersoutput, "\n")
-    let m = matchlist(bline, pattern)
-
-    if (len(m) > 0)
-      if (m[2] =~ '..a..')
-        let windowfound = 1
-      endif
-    endif
-  endfor
-
-  if (!windowfound)
-    quitall
-  endif
-endfunction
-autocmd WinEnter * call NERDTreeQuit()
 
 " Command-T Options
 let g:CommandTAcceptSelectionSplitMap='<C-o>'
@@ -166,3 +125,14 @@ noremap   <Up>     <NOP>
 noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
+
+" Navigate windows using the arrow keys
+nnoremap <silent> <Right> <c-w>l
+nnoremap <silent> <Left> <c-w>h
+nnoremap <silent> <Up> <c-w>k
+nnoremap <silent> <Down> <c-w>j
+
+nnoremap <silent> <S-Right> <c-w>v
+nnoremap <silent> <S-Left> <c-w>c
+nnoremap <silent> <S-Up> <c-w>c
+nnoremap <silent> <S-Down> <c-w>s
