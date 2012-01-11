@@ -38,6 +38,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+set smartindent
 
 " Makefile uses real tabs
 au FileType make set noexpandtab
