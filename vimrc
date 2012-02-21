@@ -66,7 +66,7 @@ set foldlevel=10
 set foldcolumn=0
 
 set guifont=Monaco\ 8
-set statusline=%{fugitive#statusline()}:\ %F\ %=[%c,%l]\ (%P)
+set statusline=%F\ %=[%c,%l]\ (%P)
 set autoread
 
 "Cut'n'Paste to system clipboard
@@ -127,13 +127,14 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
-" Navigate windows using the arrow keys
-nnoremap <silent> <Right> <c-w>l
-nnoremap <silent> <Left> <c-w>h
+" Navigate tabs using the arrow keys
+nnoremap <silent> <C-t> :tabnew<cr>
+nnoremap <silent> <Right> gt
+nnoremap <silent> <Left> gT
+let g:CommandTAcceptSelectionMap = '<C-t>'
+let g:CommandTAcceptSelectionTabMap = '<CR>'
+
 nnoremap <silent> <Up> <c-w>k
 nnoremap <silent> <Down> <c-w>j
-
-nnoremap <silent> <S-Right> <c-w>v
-nnoremap <silent> <S-Left> <c-w>c
 nnoremap <silent> <S-Up> <c-w>c
 nnoremap <silent> <S-Down> <c-w>s
