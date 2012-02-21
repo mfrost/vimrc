@@ -91,9 +91,10 @@ set listchars=tab:>-,trail:-
 
 set mouse=a		" Enable mouse usage (all modes)
 
-" Command-T Options
-let g:CommandTAcceptSelectionSplitMap='<C-o>'
-let g:CommandTMaxHeight=20
+" ctrlp options
+let g:ctrlp_map = '<c-t>'
+let g:ctrlp_working_path_mode = 2
+let g:ctrlp_custom_ignore = '\.git$\|log$\|tmp$'
 
 " Gist Options
 let g:gist_detect_filetype = 1
@@ -131,8 +132,6 @@ noremap   <Right>  <NOP>
 nnoremap <silent> <C-t> :tabnew<cr>
 nnoremap <silent> <Right> gt
 nnoremap <silent> <Left> gT
-let g:CommandTAcceptSelectionMap = '<C-t>'
-let g:CommandTAcceptSelectionTabMap = '<CR>'
 
 nnoremap <silent> <Up> <c-w>k
 nnoremap <silent> <Down> <c-w>j
