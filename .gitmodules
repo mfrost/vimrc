@@ -1,11 +1,6 @@
-[submodule "bundle/command-t"]
-  path = bundle/command-t
-  url  = git://github.com/wincent/Command-T
-
 [submodule "bundle/rails.vim"]
   path = bundle/rails.vim
   url  = git://github.com/vim-scripts/rails.vim
-
 [submodule "bundle/vim-cucumber"]
 	path = bundle/vim-cucumber
 	url = git://github.com/tpope/vim-cucumber.git
