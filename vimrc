@@ -89,10 +89,10 @@ autocmd BufWinLeave * call clearmatches()
 set list
 set listchars=tab:>-,trail:-
 
-set mouse=a		" Enable mouse usage (all modes)
+" set mouse=a		" Enable mouse usage (all modes)
 
 " ctrlp options
-let g:ctrlp_map = '<c-t>'
+let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_working_path_mode = 2
 let g:ctrlp_custom_ignore = '\.git$\|log$\|tmp$'
 
@@ -127,6 +127,9 @@ noremap   <Up>     <NOP>
 noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
+
+" Diable that escape key. Ctrl-C!
+inoremap  <Esc>    <NOP>
 
 " Navigate tabs using the arrow keys
 nnoremap <silent> <C-t> :tabnew<cr>
