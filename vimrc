@@ -7,12 +7,6 @@ set nocompatible
 call pathogen#infect()
 call pathogen#helptags()
 
-" Vim5 and later versions support syntax highlighting. Uncommenting the
-" following enables syntax highlighting by default.
-if has("syntax")
-  syntax on
-endif
-
 " Jump to last line when the file was last loaded
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
